@@ -7,8 +7,8 @@
 		"start": "node server.js"
 	},
 	"dependencies": {
-		"express": "^5.0.0-alpha.2",
-		"cors": "^2.8.1"
+		"cors": "^2.8.1",
+		"express": "^5.0.0-alpha.2"
 	},
 	"engines": {
 		"node": "11.10.0"
@@ -22,5 +22,9 @@
 		"hyperdev",
 		"express"
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"mocha": "^6.0.2"
+	}
 }
