@@ -14,6 +14,9 @@ app.get('/', function (req, res) {
      res.sendFile(process.cwd() + '/views/index.html');
   });
 
+const apiRouter = require('./routes/api')
+app.use('/api', apiRouter)
+
 app.get('/hello', function(req, res){
   res.json({greetings: "Hello, API"});
 });
