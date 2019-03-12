@@ -25,7 +25,10 @@
 	],
 	"license": "MIT",
 	"devDependencies": {
+		"@babel/core": "^7.3.4",
+		"babel-loader": "^8.0.5",
 		"chai": "^4.2.0",
-		"mocha": "^6.0.2"
+		"mocha": "^6.0.2",
+		"webpack": "^4.29.6"
 	}
 }
