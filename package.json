@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js",
-		"test": "mocha --watch --reporter progress -r chai/register-assert --colors --ui 'tdd'"
+		"test": "mocha -r chai/register-expect --colors './test/**/*.test.js'"
 	},
 	"dependencies": {
 		"cors": "^2.8.1",
