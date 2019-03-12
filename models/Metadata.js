@@ -1,11 +1,14 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
+const Helpers = require("./Helpers")
+const getModel = Helpers.GetModel
+
 const metadataSchema = new Schema({
-  name: {
+  filename: {
     type: String,
     required: true,
   }
 })
 
-module.exports = new mongoose.model("Metadata", metadataSchema)
+module.exports = getModel("Metadata", metadataSchema)
