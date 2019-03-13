@@ -5,11 +5,14 @@
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js",
-		"test": "mocha --watch --reporter progress -r chai/register-assert --colors --ui 'tdd'"
+		"test": "mocha -r chai/register-expect --colors './test/**/*.test.js'",
+		"coverage": "nyc mocha -r chai/register-expect --colors './test/**/*.test.js'"
 	},
 	"dependencies": {
 		"cors": "^2.8.1",
-		"express": "^4.16.4"
+		"express": "^4.16.4",
+		"folktale": "^2.3.2",
+		"mongoose": "^5.4.19"
 	},
 	"engines": {
 		"node": "11.10.0"
@@ -30,6 +33,8 @@
 		"babel-loader": "^8.0.5",
 		"chai": "^4.2.0",
 		"mocha": "^6.0.2",
+		"nyc": "^13.3.0",
+		"sinon": "^7.2.7",
 		"webpack": "^4.29.6"
 	}
 }

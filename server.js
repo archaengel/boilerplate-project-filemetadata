@@ -4,6 +4,8 @@ var express = require('express');
 var cors = require('cors');
 
 // require and use "multer"...
+const Maybe = require("folktale/maybe")
+const { Just, Nothing } = Maybe
 
 var app = express();
 
@@ -21,6 +23,22 @@ app.get('/hello', function(req, res){
   res.json({greetings: "Hello, API"});
 });
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Node.js listening ...');
-});
+const mainIsModule = (main) =>
+  (module) => main === module
+
+const startServerIfCommandline = (main) =>
+  (module) =>
+  (app) =>
+  (port) =>
+  mainIsModule(main)(module)
+  ? Just(app.listen(port, () => console.log(`Node is listening on port: ${port}!`)))
+  : Nothing()
+
+const howFly = () => 'soo fly'
+
+module.exports = {
+  howFly,
+  startServerIfCommandline,
+}
+
+startServerIfCommandline(require.main)(module)(app)(3000)
