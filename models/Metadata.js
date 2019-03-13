@@ -6,8 +6,8 @@ const getModel = Helpers.GetModel
 
 const metadataSchema = new Schema({
   filename: {
-    type: String,
     required: true,
+    type: String,
   }
 })
 

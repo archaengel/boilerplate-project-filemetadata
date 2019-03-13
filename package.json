@@ -6,11 +6,12 @@
 	"scripts": {
 		"start": "node server.js",
 		"test": "mocha -r chai/register-expect --colors './test/**/*.test.js'",
-    "coverage": "nyc mocha -r chai/register-expect --colors './test/**/*.test.js'"
+		"coverage": "nyc mocha -r chai/register-expect --colors './test/**/*.test.js'"
 	},
 	"dependencies": {
 		"cors": "^2.8.1",
 		"express": "^4.16.4",
+		"folktale": "^2.3.2",
 		"mongoose": "^5.4.19"
 	},
 	"engines": {
