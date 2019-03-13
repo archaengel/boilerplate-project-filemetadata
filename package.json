@@ -11,8 +11,7 @@
 	"dependencies": {
 		"cors": "^2.8.1",
 		"express": "^4.16.4",
-		"folktale": "^2.3.2",
-		"mongoose": "^5.4.19"
+		"folktale": "^2.3.2"
 	},
 	"engines": {
 		"node": "11.10.0"
