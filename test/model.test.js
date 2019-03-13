@@ -1,24 +1,30 @@
+const mongoose = require("mongoose")
 const chai = require("chai")
 const expect = chai.expect
 
 const Metadata = require("../models/Metadata")()
 
 describe("metadata", function() {
-  describe("filename", function() {
+  describe("name", function() {
     it(`is required`, function (done) {
-      let metadataWithoutFilename = new Metadata({notfilename: "something"});
+      let docWithNoName = new Metadata({notname: "something"});
 
-      metadataWithoutFilename.validate(function(err) {
-        expect(err.errors.filename).to.exist
+      docWithNoName.validate(function(err) {
+        expect(err.errors.name).to.exist
         done()
       })
     })
 
     it(`should be a string`, function(done) {
-      let metadataWithNonStringFilename = new Metadata({filename: [2,3]});
+      let docWithNotStringName = new Metadata({name: 3});
 
-      expect(metadataWithNonStringFilename.toObject().filename).to.be.a("String")
+      expect(docWithNotStringName.toObject().name).to.be.a("String")
       done()
     })
+  })
+
+  after((done) => {
+    mongoose.deleteModel("Metadata")
+    done()
   })
 })

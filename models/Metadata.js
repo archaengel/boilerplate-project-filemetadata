@@ -5,9 +5,9 @@ const Helpers = require("./Helpers")
 const getModel = Helpers.GetModel
 
 const metadataSchema = new Schema({
-  filename: {
-    required: true,
+  name: {
     type: String,
+    required: true,
   }
 })
 
