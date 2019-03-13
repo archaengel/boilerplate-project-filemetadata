@@ -23,6 +23,15 @@ describe("metadata", function() {
     })
   })
 
+  describe("type", () => {
+    it(`should be a string`, (done) => {
+      let docWithNonStringType = new Metadata({type: [3,4]})
+
+      expect(docWithNonStringType.toObject().type).to.be.a("String")
+      done()
+    })
+  })
+
   after((done) => {
     mongoose.deleteModel("Metadata")
     done()

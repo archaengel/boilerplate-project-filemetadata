@@ -8,6 +8,9 @@ const metadataSchema = new Schema({
   name: {
     type: String,
     required: true,
+  },
+  type: {
+    type: String,
   }
 })
 
