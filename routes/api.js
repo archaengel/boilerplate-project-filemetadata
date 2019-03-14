@@ -1,7 +1,8 @@
 const router = require('express').Router()
+const {
+  fileAnalyseHandler
+} = require("../controllers/analyser")
 
-router.get('/hello', (req, res, next) => {
-  res.send("<h1>HELLO Yo</h1>")
-})
+router.post('/fileanalyse', fileAnalyseHandler)
 
 module.exports = router
