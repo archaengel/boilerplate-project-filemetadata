@@ -1,7 +1,5 @@
 const chai = require("chai")
 const expect = chai.expect
-const Maybe = require("folktale/maybe")
-const { Just, Nothing } = Maybe
 
 const {
   howFly,
