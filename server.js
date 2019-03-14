@@ -4,6 +4,8 @@ var express = require('express');
 var cors = require('cors');
 
 // require and use "multer"...
+const multer = require("multer")
+
 const Maybe = require("folktale/maybe")
 const { Just, Nothing } = Maybe
 
@@ -34,10 +36,7 @@ const startServerIfCommandline = (main) =>
   ? Just(app.listen(port, () => console.log(`Node is listening on port: ${port}!`)))
   : Nothing()
 
-const howFly = () => 'soo fly'
-
 module.exports = {
-  howFly,
   startServerIfCommandline,
 }
 
